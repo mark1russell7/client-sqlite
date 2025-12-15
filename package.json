@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "@mark1russell7/client-sqlite",
+  "version": "1.0.0",
+  "description": "SQLite procedures for client - database operations via client.call",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .tsbuildinfo",
+    "postinstall": "client announce"
+  },
+  "client": {
+    "procedures": "./dist/register.js"
+  },
+  "dependencies": {
+    "client": "github:mark1russell7/client#main",
+    "docker-sqlite": "github:mark1russell7/docker-sqlite#main"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/node": "^22.0.0",
+    "@mark1russell7/cue": "github:mark1russell7/cue#main"
+  },
+  "keywords": [
+    "sqlite",
+    "client",
+    "procedures",
+    "rpc",
+    "database"
+  ],
+  "license": "MIT",
+  "sideEffects": false
+}
