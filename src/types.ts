@@ -12,7 +12,7 @@ import { join } from "node:path";
 /**
  * Default database path for CLI logs
  */
-export const DEFAULT_DB_PATH = join(homedir(), "logs", "cli", "cli.db");
+export const DEFAULT_DB_PATH: string = join(homedir(), "logs", "cli", "cli.db");
 
 // =============================================================================
 // Log Levels
