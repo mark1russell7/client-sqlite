@@ -36,6 +36,6 @@
 export type { DbQueryInput, DbQueryOutput, DbExecuteInput, DbExecuteOutput, LogsStoreInput, LogsStoreOutput, LogsQueryInput, LogsQueryOutput, LogEntry, LogLevel, } from "./types.js";
 export { DEFAULT_DB_PATH, LOG_LEVELS } from "./types.js";
 export { registerSqliteProcedures } from "./register.js";
-export { withConnection, createConnection, query, execute, execMultiple, lastInsertRowId, tableExists, getMigrationStatus, runMigrations, rollbackMigration, createMigration, } from "docker-sqlite";
-export type { ConnectionConfig, ConnectionCallback, QueryResult, ExecuteResult, Migration, MigrationStatus, Database, } from "docker-sqlite";
+export { withConnection, createConnection, query, execute, execMultiple, lastInsertRowId, tableExists, getMigrationStatus, runMigrations, rollbackMigration, createMigration, } from "@mark1russell7/docker-sqlite";
+export type { ConnectionConfig, ConnectionCallback, QueryResult, ExecuteResult, Migration, MigrationStatus, Database, } from "@mark1russell7/docker-sqlite";
 //# sourceMappingURL=index.d.ts.map

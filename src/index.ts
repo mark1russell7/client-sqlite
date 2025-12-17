@@ -75,7 +75,7 @@ export {
   runMigrations,
   rollbackMigration,
   createMigration,
-} from "docker-sqlite";
+} from "@mark1russell7/docker-sqlite";
 
 export type {
   ConnectionConfig,
@@ -85,4 +85,4 @@ export type {
   Migration,
   MigrationStatus,
   Database,
-} from "docker-sqlite";
+} from "@mark1russell7/docker-sqlite";

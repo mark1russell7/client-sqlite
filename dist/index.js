@@ -41,5 +41,5 @@ export { registerSqliteProcedures } from "./register.js";
 // =============================================================================
 // Re-export docker-sqlite utilities for direct use
 // =============================================================================
-export { withConnection, createConnection, query, execute, execMultiple, lastInsertRowId, tableExists, getMigrationStatus, runMigrations, rollbackMigration, createMigration, } from "docker-sqlite";
+export { withConnection, createConnection, query, execute, execMultiple, lastInsertRowId, tableExists, getMigrationStatus, runMigrations, rollbackMigration, createMigration, } from "@mark1russell7/docker-sqlite";
 //# sourceMappingURL=index.js.map

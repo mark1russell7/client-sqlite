@@ -4,8 +4,8 @@
  * Registers database and logging procedures with the client system.
  * This file is referenced by package.json's client.procedures field.
  */
-import { createProcedure, registerProcedures } from "client";
-import { withConnection, query, execute, lastInsertRowId, runMigrations, } from "docker-sqlite";
+import { createProcedure, registerProcedures } from "@mark1russell7/client";
+import { withConnection, query, execute, lastInsertRowId, runMigrations, } from "@mark1russell7/docker-sqlite";
 import { DEFAULT_DB_PATH, LOG_LEVELS, } from "./types.js";
 function schema() {
     return {
