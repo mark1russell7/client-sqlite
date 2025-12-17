@@ -10,14 +10,14 @@ importers:
     dependencies:
       '@mark1russell7/client':
         specifier: github:mark1russell7/client#main
-        version: https://codeload.github.com/mark1russell7/client/tar.gz/2c98741ce650bd74a96cd166672a184aa4f4e658
+        version: https://codeload.github.com/mark1russell7/client/tar.gz/39ae50a0ce8040c7513c426217c46b1cfbf5da68
       '@mark1russell7/docker-sqlite':
         specifier: github:mark1russell7/docker-sqlite#main
-        version: https://codeload.github.com/mark1russell7/docker-sqlite/tar.gz/4d73e587aeb893ae51f86e15ef47b7652ad4b7fe
+        version: https://codeload.github.com/mark1russell7/docker-sqlite/tar.gz/051d3fb73bbefe883ad8b582ce04c95b214718bb
     devDependencies:
       '@mark1russell7/cue':
         specifier: github:mark1russell7/cue#main
-        version: https://codeload.github.com/mark1russell7/cue/tar.gz/e751d55e2bfe65ab4cff86768de8f387e9757097
+        version: https://codeload.github.com/mark1russell7/cue/tar.gz/61c8ea18d0663b752f50caec236926d57646405f
       '@types/node':
         specifier: ^22.0.0
         version: 22.19.3
@@ -27,8 +27,8 @@ importers:
 
 packages:
 
-  '@mark1russell7/client@https://codeload.github.com/mark1russell7/client/tar.gz/2c98741ce650bd74a96cd166672a184aa4f4e658':
-    resolution: {tarball: https://codeload.github.com/mark1russell7/client/tar.gz/2c98741ce650bd74a96cd166672a184aa4f4e658}
+  '@mark1russell7/client@https://codeload.github.com/mark1russell7/client/tar.gz/39ae50a0ce8040c7513c426217c46b1cfbf5da68':
+    resolution: {tarball: https://codeload.github.com/mark1russell7/client/tar.gz/39ae50a0ce8040c7513c426217c46b1cfbf5da68}
     version: 1.0.0
     engines: {node: '>=20'}
     hasBin: true
@@ -41,14 +41,14 @@ packages:
       zod:
         optional: true
 
-  '@mark1russell7/cue@https://codeload.github.com/mark1russell7/cue/tar.gz/e751d55e2bfe65ab4cff86768de8f387e9757097':
-    resolution: {tarball: https://codeload.github.com/mark1russell7/cue/tar.gz/e751d55e2bfe65ab4cff86768de8f387e9757097}
+  '@mark1russell7/cue@https://codeload.github.com/mark1russell7/cue/tar.gz/61c8ea18d0663b752f50caec236926d57646405f':
+    resolution: {tarball: https://codeload.github.com/mark1russell7/cue/tar.gz/61c8ea18d0663b752f50caec236926d57646405f}
     version: 1.0.0
     engines: {node: '>=25.0.0', npm: '>=11.0.0'}
     hasBin: true
 
-  '@mark1russell7/docker-sqlite@https://codeload.github.com/mark1russell7/docker-sqlite/tar.gz/4d73e587aeb893ae51f86e15ef47b7652ad4b7fe':
-    resolution: {tarball: https://codeload.github.com/mark1russell7/docker-sqlite/tar.gz/4d73e587aeb893ae51f86e15ef47b7652ad4b7fe}
+  '@mark1russell7/docker-sqlite@https://codeload.github.com/mark1russell7/docker-sqlite/tar.gz/051d3fb73bbefe883ad8b582ce04c95b214718bb':
+    resolution: {tarball: https://codeload.github.com/mark1russell7/docker-sqlite/tar.gz/051d3fb73bbefe883ad8b582ce04c95b214718bb}
     version: 0.1.0
     engines: {node: '>=20'}
 
@@ -80,16 +80,16 @@ packages:
 
 snapshots:
 
-  '@mark1russell7/client@https://codeload.github.com/mark1russell7/client/tar.gz/2c98741ce650bd74a96cd166672a184aa4f4e658':
+  '@mark1russell7/client@https://codeload.github.com/mark1russell7/client/tar.gz/39ae50a0ce8040c7513c426217c46b1cfbf5da68':
     dependencies:
       ws: 8.18.3
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  '@mark1russell7/cue@https://codeload.github.com/mark1russell7/cue/tar.gz/e751d55e2bfe65ab4cff86768de8f387e9757097': {}
+  '@mark1russell7/cue@https://codeload.github.com/mark1russell7/cue/tar.gz/61c8ea18d0663b752f50caec236926d57646405f': {}
 
-  '@mark1russell7/docker-sqlite@https://codeload.github.com/mark1russell7/docker-sqlite/tar.gz/4d73e587aeb893ae51f86e15ef47b7652ad4b7fe':
+  '@mark1russell7/docker-sqlite@https://codeload.github.com/mark1russell7/docker-sqlite/tar.gz/051d3fb73bbefe883ad8b582ce04c95b214718bb':
     dependencies:
       sql.js: 1.13.0
 
