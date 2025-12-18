@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@mark1russell7/client':
         specifier: github:mark1russell7/client#main
-        version: https://codeload.github.com/mark1russell7/client/tar.gz/9e6c01c3b803f5f9bf3fb584aeade1f3ce02ceb4
+        version: https://codeload.github.com/mark1russell7/client/tar.gz/488afb8e78b18c7a10b3f318169b2a756c9e1a0e
       '@mark1russell7/docker-sqlite':
         specifier: github:mark1russell7/docker-sqlite#main
         version: https://codeload.github.com/mark1russell7/docker-sqlite/tar.gz/051d3fb73bbefe883ad8b582ce04c95b214718bb
@@ -27,8 +27,8 @@ importers:
 
 packages:
 
-  '@mark1russell7/client@https://codeload.github.com/mark1russell7/client/tar.gz/9e6c01c3b803f5f9bf3fb584aeade1f3ce02ceb4':
-    resolution: {tarball: https://codeload.github.com/mark1russell7/client/tar.gz/9e6c01c3b803f5f9bf3fb584aeade1f3ce02ceb4}
+  '@mark1russell7/client@https://codeload.github.com/mark1russell7/client/tar.gz/488afb8e78b18c7a10b3f318169b2a756c9e1a0e':
+    resolution: {tarball: https://codeload.github.com/mark1russell7/client/tar.gz/488afb8e78b18c7a10b3f318169b2a756c9e1a0e}
     version: 1.0.0
     engines: {node: '>=20'}
     hasBin: true
@@ -80,7 +80,7 @@ packages:
 
 snapshots:
 
-  '@mark1russell7/client@https://codeload.github.com/mark1russell7/client/tar.gz/9e6c01c3b803f5f9bf3fb584aeade1f3ce02ceb4':
+  '@mark1russell7/client@https://codeload.github.com/mark1russell7/client/tar.gz/488afb8e78b18c7a10b3f318169b2a756c9e1a0e':
     dependencies:
       ws: 8.18.3
     transitivePeerDependencies:
