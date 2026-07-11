@@ -4,27 +4,20 @@
  * Registers database and logging procedures with the client system.
  * This file is referenced by package.json's client.procedures field.
  */
-import { createProcedure, registerProcedures } from "@mark1russell7/client";
+import { createProcedure, registerProcedures, outputSchema } from "@mark1russell7/client";
 import { withConnection, query, execute, lastInsertRowId, runMigrations, } from "@mark1russell7/docker-sqlite";
 import { DEFAULT_DB_PATH, LOG_LEVELS, } from "./types.js";
-function schema() {
-    return {
-        parse: (data) => data,
-        safeParse: (data) => ({ success: true, data: data }),
-        _output: undefined,
-    };
-}
 // =============================================================================
 // Schemas
 // =============================================================================
-const dbQueryInputSchema = schema();
-const dbQueryOutputSchema = schema();
-const dbExecuteInputSchema = schema();
-const dbExecuteOutputSchema = schema();
-const logsStoreInputSchema = schema();
-const logsStoreOutputSchema = schema();
-const logsQueryInputSchema = schema();
-const logsQueryOutputSchema = schema();
+const dbQueryInputSchema = outputSchema();
+const dbQueryOutputSchema = outputSchema();
+const dbExecuteInputSchema = outputSchema();
+const dbExecuteOutputSchema = outputSchema();
+const logsStoreInputSchema = outputSchema();
+const logsStoreOutputSchema = outputSchema();
+const logsQueryInputSchema = outputSchema();
+const logsQueryOutputSchema = outputSchema();
 // =============================================================================
 // Log Table Migrations
 // =============================================================================

@@ -5,7 +5,7 @@
  * This file is referenced by package.json's client.procedures field.
  */
 
-import { createProcedure, registerProcedures } from "@mark1russell7/client";
+import { createProcedure, registerProcedures, outputSchema } from "@mark1russell7/client";
 import {
   withConnection,
   query,
@@ -30,42 +30,17 @@ import {
 } from "./types.js";
 
 // =============================================================================
-// Minimal Schema Helpers (Zod-like interface for procedure system)
-// =============================================================================
-
-interface ZodErrorLike {
-  message: string;
-  errors: Array<{ path: (string | number)[]; message: string }>;
-}
-
-interface ZodLikeSchema<T> {
-  parse(data: unknown): T;
-  safeParse(
-    data: unknown
-  ): { success: true; data: T } | { success: false; error: ZodErrorLike };
-  _output: T;
-}
-
-function schema<T>(): ZodLikeSchema<T> {
-  return {
-    parse: (data: unknown) => data as T,
-    safeParse: (data: unknown) => ({ success: true as const, data: data as T }),
-    _output: undefined as unknown as T,
-  };
-}
-
-// =============================================================================
 // Schemas
 // =============================================================================
 
-const dbQueryInputSchema = schema<DbQueryInput>();
-const dbQueryOutputSchema = schema<DbQueryOutput>();
-const dbExecuteInputSchema = schema<DbExecuteInput>();
-const dbExecuteOutputSchema = schema<DbExecuteOutput>();
-const logsStoreInputSchema = schema<LogsStoreInput>();
-const logsStoreOutputSchema = schema<LogsStoreOutput>();
-const logsQueryInputSchema = schema<LogsQueryInput>();
-const logsQueryOutputSchema = schema<LogsQueryOutput>();
+const dbQueryInputSchema = outputSchema<DbQueryInput>();
+const dbQueryOutputSchema = outputSchema<DbQueryOutput>();
+const dbExecuteInputSchema = outputSchema<DbExecuteInput>();
+const dbExecuteOutputSchema = outputSchema<DbExecuteOutput>();
+const logsStoreInputSchema = outputSchema<LogsStoreInput>();
+const logsStoreOutputSchema = outputSchema<LogsStoreOutput>();
+const logsQueryInputSchema = outputSchema<LogsQueryInput>();
+const logsQueryOutputSchema = outputSchema<LogsQueryOutput>();
 
 // =============================================================================
 // Log Table Migrations
