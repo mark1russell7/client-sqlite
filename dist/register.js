@@ -127,6 +127,18 @@ const logsStoreProcedure = createProcedure()
 // =============================================================================
 // logs.query Procedure
 // =============================================================================
+/**
+ * Validate a value as a non-negative integer before it is interpolated into
+ * SQL. The input schema is a pass-through, so `limit`/`offset` can arrive as
+ * arbitrary values; interpolating them directly is a SQL injection / syntax
+ * hazard. Throws on anything that is not a finite, non-negative integer.
+ */
+function toNonNegativeInt(value, field) {
+    if (typeof value !== "number" || !Number.isInteger(value) || value < 0) {
+        throw new Error(`Invalid ${field}: expected a non-negative integer, got ${JSON.stringify(value)}`);
+    }
+    return value;
+}
 const logsQueryProcedure = createProcedure()
     .path(["logs", "query"])
     .input(logsQueryInputSchema)
@@ -155,8 +167,12 @@ const logsQueryProcedure = createProcedure()
         }
         const whereClause = conditions.length > 0 ? `WHERE ${conditions.join(" AND ")}` : "";
         const orderDir = input.orderBy === "asc" ? "ASC" : "DESC";
-        const limitClause = input.limit !== undefined ? `LIMIT ${input.limit}` : "";
-        const offsetClause = input.offset !== undefined ? `OFFSET ${input.offset}` : "";
+        let limitClause = input.limit !== undefined
+            ? `LIMIT ${toNonNegativeInt(input.limit, "limit")}`
+            : "";
+        const offsetClause = input.offset !== undefined
+            ? `OFFSET ${toNonNegativeInt(input.offset, "offset")}`
+            : "";
         const sql = `
         SELECT id, timestamp, level, message, data, session_id, command, context, error_stack
         FROM logs
