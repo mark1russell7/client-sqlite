@@ -270,7 +270,16 @@ const logsQueryProcedure = createProcedure()
         errorStack: row.error_stack,
       }));
 
-      return { logs };
+      // Total number of rows matching the filters, ignoring LIMIT/OFFSET, so
+      // callers can paginate. `params` holds only the WHERE-clause bindings.
+      const countResult = query<{ total: number }>(
+        db,
+        `SELECT COUNT(*) AS total FROM logs ${whereClause}`,
+        params
+      );
+      const total = countResult.rows[0]?.total ?? 0;
+
+      return { logs, total };
     });
   })
   .build();
