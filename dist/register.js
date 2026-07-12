@@ -170,9 +170,16 @@ const logsQueryProcedure = createProcedure()
         let limitClause = input.limit !== undefined
             ? `LIMIT ${toNonNegativeInt(input.limit, "limit")}`
             : "";
-        const offsetClause = input.offset !== undefined
-            ? `OFFSET ${toNonNegativeInt(input.offset, "offset")}`
-            : "";
+        let offsetClause = "";
+        if (input.offset !== undefined) {
+            offsetClause = `OFFSET ${toNonNegativeInt(input.offset, "offset")}`;
+            // SQLite's grammar only allows OFFSET as part of a LIMIT clause; an
+            // OFFSET with no LIMIT is a syntax error. Use "LIMIT -1" (unbounded)
+            // so an offset-only query remains valid.
+            if (input.limit === undefined) {
+                limitClause = "LIMIT -1";
+            }
+        }
         const sql = `
         SELECT id, timestamp, level, message, data, session_id, command, context, error_stack
         FROM logs
